@@ -13,9 +13,7 @@ function Header({ changeMode, mode }) {
     <div
       className={` ${mode === "bg-[#202d36]" ? "bg-[#2b3743]" : "bg-[#fafafa]"} relative   w-full h-[4.50rem] border-b-2 border-gray-200`}
     >
-      <h1
-        className={`text-2xl ${text} absolute top-[1rem] left-[4rem] font-medium`}
-      >
+      <h1 className={`text-2xl ${text} absolute top-4 left-16 font-medium`}>
         Where in the World?
       </h1>
       <button
@@ -24,12 +22,12 @@ function Header({ changeMode, mode }) {
           changeText();
           setImage(!image);
         }}
-        className="absolute right-[4rem] top-[1.20rem] flex flex-row"
+        className="absolute right-16 top-[1.20rem] flex flex-row"
       >
         <img
           src={image ? sunIcon : moonIcon}
           alt="moonIcon"
-          className="h-[1.40rem]  w-[2rem]"
+          className="h-[1.40rem]  w-8"
         />
         <span className={`text-lg ${text} font-medium`}>Dark Mode</span>
       </button>
