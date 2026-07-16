@@ -11,7 +11,7 @@ function Header({ changeMode, mode }) {
 
   return (
     <div
-      className={` ${mode} relative   w-full h-[4.50rem] border-b-2 border-gray-200`}
+      className={` ${mode === "bg-[#202d36]" ? "bg-[#2b3743]" : "bg-[#fafafa]"} relative   w-full h-[4.50rem] border-b-2 border-gray-200`}
     >
       <h1
         className={`text-2xl ${text} absolute top-[1rem] left-[4rem] font-medium`}
