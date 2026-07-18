@@ -1,8 +1,11 @@
 import users from "../assets/data.json";
-function Card() {
+function Card({ search }) {
+
   return (
-    <div className="w-full flex pt-10 flex-wrap gap-10 justify-center min-h-screen max-h-max">
-      {users.map((ind, key) => (
+    <div className="w-full relative top-10 flex pt-10 flex-wrap gap-10 justify-center min-h-screen max-h-max">
+      {users.filter((ind) => {
+        return ind.name.toLowerCase().includes(search.toLowerCase());
+      }).map((ind, key) => (
         <div
           key={key}
           className=" rounded-lg  shadow-gray-300 shadow-lg flex flex-col h-72 w-[18rem]"
