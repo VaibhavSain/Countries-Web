@@ -7,14 +7,16 @@ import Filter from "./components/Filter";
 function App() {
   const [mode, setMode] = useState("bg-[#fafafa]");
   const [search, setSearch] = useState('');
+  const [region, setRegion] = useState('');
+  console.log(region)
   const changeMode = () => {
     setMode(mode === "bg-[#fafafa]" ? "bg-[#202d36]" : "bg-[#fafafa]");
   };
   return (
     <div className={`h-screen w-screen ${mode}`}>
       <Header changeMode={changeMode} mode={mode} />
-      <Filter setSearch={setSearch} />
-      <Card search={search} />
+      <Filter setSearch={setSearch} setRegion={setRegion} region={region} />
+      <Card search={search} region={region} />
     </div>
   );
 }
