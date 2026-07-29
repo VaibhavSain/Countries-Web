@@ -1,9 +1,11 @@
-import React from 'react'
+import Filter from '../components/Filter.tsx'
+import Card from '../components/Card.tsx'
 
-function dashboard() {
+function dashboard({ setSearch, data, search }) {
     return (
         <div>
-            
+            <Filter setSearch={setSearch} />
+            <Card data={data} search={search} />
         </div>
     )
 }
