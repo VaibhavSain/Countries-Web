@@ -1,13 +1,20 @@
-function Card({ search, data }) {
+import { useNavigate } from "react-router-dom";
+
+function Card({ search, data, setId }) {
   const filterData = data.filter((country) => {
     return country.name.toLowerCase().includes(search.toLowerCase());
   });
-
+  const navigate = useNavigate();
   return (
     <div className="w-full relative top-10 flex pt-10 flex-wrap gap-10 justify-center min-h-screen max-h-max">
       {filterData.map((ind, key) => (
         <div
           key={key}
+          onClick={() => {
+            setId(ind)
+            navigate("/details")
+          }
+          }
           className="rounded-lg shadow-gray-300 shadow-lg flex flex-col h-72 w-[18rem]"
         >
           <img
