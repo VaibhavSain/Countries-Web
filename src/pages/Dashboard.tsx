@@ -1,11 +1,11 @@
 import Filter from '../components/Filter.tsx'
 import Card from '../components/Card.tsx'
 
-function Dashboard({ setSearch, setId, data, search }) {
+function Dashboard({ setSearch, mode, setId, data, search }) {
     return (
         <div>
             <Filter setSearch={setSearch} />
-            <Card data={data} setId={setId} search={search} />
+            <Card data={data} mode={mode} setId={setId} search={search} />
         </div>
     )
 }

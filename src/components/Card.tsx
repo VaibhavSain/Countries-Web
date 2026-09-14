@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function Card({ search, data, setId }) {
+function Card({ search, data, setId, mode }) {
   const filterData = data.filter((country) => {
     return country.name.toLowerCase().includes(search.toLowerCase());
   });
@@ -15,7 +15,7 @@ function Card({ search, data, setId }) {
             navigate("/details")
           }
           }
-          className="rounded-lg shadow-gray-300 shadow-lg flex flex-col h-72 w-[18rem]"
+          className={`rounded-lg ${mode == 'bg-[#fafafa]' ? 'shadow-gray-300' : 'shadow-gray-700'} shadow-lg flex flex-col h-72 w-[18rem]`}
         >
           <img
             className="w-full bg-cover h-40 rounded-t-lg"

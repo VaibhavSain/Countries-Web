@@ -1,13 +1,21 @@
 import Image from "../components/Image";
 import BackButton from "../components/BackButton";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-function Detail({ id }) {
+function Detail({ id, mode }) {
   const navigate = useNavigate();
+  const [border, setBorder] = useState(false);
   useEffect(() => {
     if (id === "") {
       navigate("/");
+    }
+
+    if (id.borders) {
+      setBorder(id.borders);
+    }
+    else {
+      setBorder(false);
     }
   }, [])
   return <div className="h-screen  w-screen">
@@ -28,17 +36,22 @@ function Detail({ id }) {
         <span>{ind.name}</span>
       ))}</li>
     </ul>
-    <ul className="flex absolute left-[42.80rem] top-152 flex-row">
+    {
+      border ?
 
-      <b>Border Countries: </b>
-      <span className="flex  flex-wrap gap-2 ">
-        {id.borders.map((ind) => (
-          <div className="bg-white  rounded-lg  shadow-gray-400 shadow-sm">{ind}</div>
+        <div className="flex absolute left-[42.80rem] top-152 flex-row">
+          <b>Border Countries: </b>
+          <span className="flex  flex-wrap gap-2 ">
+            {id.borders.map((ind) => (
+              <div className={`${mode == "bg-[#fafafa]" ? 'bg-white' : 'bg-gray-700'}bg-white  rounded-lg  shadow-gray-400 shadow-sm`}>{ind}</div>
+            ))}
+          </span>
 
-        ))}
-      </span>
+        </div>
+        :
+        ''
+    }
 
-    </ul>
 
   </div>
 }
