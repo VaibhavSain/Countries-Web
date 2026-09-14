@@ -9,7 +9,7 @@ import { Route, Routes } from "react-router-dom";
 function App() {
   const [mode, setMode] = useState("bg-[#fafafa]");
   const [search, setSearch] = useState('');
-  const [id, setId] = useState("");
+  const [id, setId] = useState();
   const [data, setData] = useState(users);
   const changeMode = () => {
     setMode(mode === "bg-[#fafafa]" ? "bg-[#202d36]" : "bg-[#fafafa]");
@@ -20,7 +20,7 @@ function App() {
     <div className={`min-h-screen  max-h-full w-screen ${mode}`}>
       <Header changeMode={changeMode} mode={mode} />
       <Routes>
-        <Route path="/"  element={<Dashboard mode={mode} setId={setId} setSearch={setSearch} data={data} search={search} />} />
+        <Route path="/" element={<Dashboard mode={mode} setId={setId} setSearch={setSearch} data={data} search={search} />} />
         <Route path="/details" element={<Detail mode={mode} id={id} />} />
       </Routes>
 

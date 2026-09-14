@@ -4,7 +4,7 @@ import Card from '../components/Card.tsx'
 function Dashboard({ setSearch, mode, setId, data, search }) {
     return (
         <div>
-            <Filter setSearch={setSearch} />
+            <Filter setSearch={setSearch} mode={mode} />
             <Card data={data} mode={mode} setId={setId} search={search} />
         </div>
     )

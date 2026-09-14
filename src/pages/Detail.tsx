@@ -1,15 +1,10 @@
 import Image from "../components/Image";
 import BackButton from "../components/BackButton";
-import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Detail({ id, mode }) {
-  const navigate = useNavigate();
   const [border, setBorder] = useState(false);
   useEffect(() => {
-    if (id === "") {
-      navigate("/");
-    }
 
     if (id.borders) {
       setBorder(id.borders);
@@ -20,7 +15,7 @@ function Detail({ id, mode }) {
   }, [])
   return <div className="h-screen  w-screen">
     <Image id={id} />
-    <BackButton />
+    <BackButton mode={mode} />
     <h2 className="absolute text-3xl left-170 font-semibold top-80">{id.name}</h2>
     <ul className="absolute left-170 flex flex-col top-96 gap-2">
       <li><b>Native Name:</b>{id.nativeName}</li>
