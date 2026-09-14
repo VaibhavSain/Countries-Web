@@ -38,7 +38,7 @@ function Detail({ id, mode }) {
           <b>Border Countries: </b>
           <span className="flex  flex-wrap gap-2 ">
             {id.borders.map((ind) => (
-              <div className={`${mode == "bg-[#fafafa]" ? 'bg-white' : 'bg-gray-700'}bg-white  rounded-lg  shadow-gray-400 shadow-sm`}>{ind}</div>
+              <div className={`${mode == "bg-[#fafafa]" ? 'bg-white' : 'bg-gray-700'}  rounded-lg  shadow-gray-400 shadow-sm`}>{ind}</div>
             ))}
           </span>
 
