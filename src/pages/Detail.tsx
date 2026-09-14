@@ -13,7 +13,7 @@ function Detail({ id, mode }) {
       setBorder(false);
     }
   }, [])
-  return <div className="h-screen  w-screen">
+  return <div className={`h-screen ${mode == "bg-[#fafafa]" ? "text-black" : "text-white"}  w-screen`}>
     <Image id={id} />
     <BackButton mode={mode} />
     <h2 className="absolute text-3xl left-170 font-semibold top-80">{id.name}</h2>
@@ -38,7 +38,7 @@ function Detail({ id, mode }) {
           <b>Border Countries: </b>
           <span className="flex  flex-wrap gap-2 ">
             {id.borders.map((ind) => (
-              <div className={`${mode == "bg-[#fafafa]" ? 'bg-white' : 'bg-gray-700'}  rounded-lg  shadow-gray-400 shadow-sm`}>{ind}</div>
+              <div className={`${mode == "bg-[#fafafa]" ? 'bg-white' : 'bg-gray-700'}  rounded-lg ${mode === "bg-[#fafafa]" ? 'shadow-gray-400' : 'shadow-gray-700'} shadow-sm`}>{ind}</div>
             ))}
           </span>
 

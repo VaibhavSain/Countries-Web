@@ -6,7 +6,7 @@ function Card({ search, data, setId, mode }) {
   });
   const navigate = useNavigate();
   return (
-    <div className="w-full relative top-10 flex pb-10 pt-10 flex-wrap gap-10 justify-center min-h-screen max-h-max">
+    <div className={`w-full relative  top-10 flex pb-10 ${mode == "bg-[#fafafa]" ? "bg-[#fafafa]" : "bg-[#202d36]"} pt-10 flex-wrap gap-10 justify-center min-h-screen max-h-max`}>
       {filterData.map((ind, key) => (
         <div
           key={key}
@@ -15,7 +15,7 @@ function Card({ search, data, setId, mode }) {
             navigate("/details")
           }
           }
-          className={`rounded-lg ${mode == 'bg-[#fafafa]' ? 'shadow-gray-300' : 'shadow-gray-700'} shadow-lg flex flex-col h-72 w-[18rem]`}
+          className={`rounded-lg ${mode == 'bg-[#fafafa]' ? 'shadow-gray-300' : 'shadow-gray-900'} shadow-lg ${mode == 'bg-[#fafafa]' ? 'text-black' : 'text-white'} flex flex-col h-72 w-[18rem]`}
         >
           <img
             className="w-full bg-cover h-40 rounded-t-lg"
