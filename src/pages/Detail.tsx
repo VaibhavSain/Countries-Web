@@ -29,14 +29,17 @@ function Detail({ id }) {
       ))}</li>
     </ul>
     <ul className="flex absolute left-[42.80rem] top-152 flex-row">
+
       <b>Border Countries: </b>
       <span className="flex  flex-wrap gap-2 ">
-        <div className="bg-white  rounded-lg  shadow-gray-400 shadow-sm">France</div>
-        <div className="bg-white  rounded-lg shadow-gray-400 shadow-sm">France</div>
-        <div className="bg-white  rounded-lg shadow-gray-400 shadow-sm">France</div>
-        <div className="bg-white  rounded-lg shadow-gray-400 shadow-sm">France</div>
+        {id.borders.map((ind) => (
+          <div className="bg-white  rounded-lg  shadow-gray-400 shadow-sm">{ind}</div>
+
+        ))}
       </span>
+
     </ul>
+
   </div>
 }
 

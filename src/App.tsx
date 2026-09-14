@@ -17,7 +17,7 @@ function App() {
   console.log(id);
 
   return (
-    <div className={`h-screen w-screen ${mode}`}>
+    <div className={`min-h-screen  max-h-full w-screen ${mode}`}>
       <Header changeMode={changeMode} mode={mode} />
       <Routes>
         <Route path="/" element={<Dashboard setId={setId} setSearch={setSearch} data={data} search={search} />} />

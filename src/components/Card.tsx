@@ -6,7 +6,7 @@ function Card({ search, data, setId }) {
   });
   const navigate = useNavigate();
   return (
-    <div className="w-full relative top-10 flex pt-10 flex-wrap gap-10 justify-center min-h-screen max-h-max">
+    <div className="w-full relative top-10 flex pb-10 pt-10 flex-wrap gap-10 justify-center min-h-screen max-h-max">
       {filterData.map((ind, key) => (
         <div
           key={key}
