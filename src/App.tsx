@@ -15,7 +15,7 @@ function App() {
     setMode(mode === "bg-[#fafafa]" ? "bg-[#202d36]" : "bg-[#fafafa]");
   };
   console.log(id);
-
+//  this is a comment
   return (
     <div className={`min-h-screen  max-h-full w-screen ${mode == "bg-[#fafafa]" ? "bg-[#fafafa]" : "bg-[#202d36]"}`}>
       <Header changeMode={changeMode} mode={mode} />
