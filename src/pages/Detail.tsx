@@ -27,8 +27,8 @@ function Detail({ id, mode }) {
     <ul className="absolute left-264 flex flex-col top-96 gap-2">
       <li><b>Top Level Domain:</b>{id.topLevelDomain}</li>
       <li><b>Currencies:</b></li>
-      <li className="flex flex-wrap gap-2"><b>Languages:</b>{id.languages.map((ind) => (
-        <span>{ind.name}</span>
+      <li className="flex flex-wrap gap-2"><b>Languages:</b>{id.languages.map((ind,key) => (
+        <span key={key}>{ind.name}</span>
       ))}</li>
     </ul>
     {
