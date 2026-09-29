@@ -27,7 +27,7 @@ function Detail({ id, mode }) {
     <ul className="absolute left-264 flex flex-col top-96 gap-2">
       <li><b>Top Level Domain:</b>{id.topLevelDomain}</li>
       <li><b>Currencies:</b></li>
-      <li className="flex flex-wrap gap-2"><b>Languages:</b>{id.languages.map((ind,key) => (
+      <li className="flex flex-wrap gap-2"><b>Languages:</b>{id.languages.map((ind, key) => (
         <span key={key}>{ind.name}</span>
       ))}</li>
     </ul>
@@ -37,8 +37,8 @@ function Detail({ id, mode }) {
         <div className="flex absolute left-[42.80rem] top-152 flex-row">
           <b>Border Countries: </b>
           <span className="flex  flex-wrap gap-2 ">
-            {id.borders.map((ind) => (
-              <div className={`${mode == "bg-[#fafafa]" ? 'bg-white' : 'bg-gray-700'}  rounded-lg ${mode === "bg-[#fafafa]" ? 'shadow-gray-400' : 'shadow-gray-700'} shadow-sm`}>{ind}</div>
+            {id.borders.map((ind, key) => (
+              <div key={key} className={`${mode == "bg-[#fafafa]" ? 'bg-white' : 'bg-gray-700'}  rounded-lg ${mode === "bg-[#fafafa]" ? 'shadow-gray-400' : 'shadow-gray-700'} shadow-sm`}>{ind}</div>
             ))}
           </span>
 

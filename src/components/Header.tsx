@@ -22,7 +22,7 @@ function Header({ changeMode, mode }) {
           changeText();
           setImage(!image);
         }}
-        className="absolute right-16 top-[1.20rem] flex flex-row"
+        className="absolute hidden sm:flex right-16 top-[1.20rem]  flex-row"
       >
         <img
           src={image ? sunIcon : moonIcon}
